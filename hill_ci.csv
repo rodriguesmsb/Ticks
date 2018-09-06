@@ -1,0 +1,7 @@
+"Site","Diversity","Observed","Estimator","s.e.","LCL","UCL"
+"Peri_urban","Species richness",8,8.497,1.315,8.029,16.395
+"Peri_urban","Shannon diversity",3.393,3.487,0.307,3.393,4.088
+"Peri_urban","Simpson diversity",2.427,2.45,0.222,2.427,2.885
+"Rural","Species richness",9,9,0.368,9,9.891
+"Rural","Shannon diversity",4.648,4.673,0.114,4.648,4.896
+"Rural","Simpson diversity",4.128,4.145,0.084,4.128,4.309
