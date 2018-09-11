@@ -50,19 +50,19 @@ perm_nym <- read_csv("Perm_res_nymph.csv")
 #########################################################################################
 
 #Couting the n of individulas in each point
-map_plot <- dados %>% select("Ambiente", "Especie", "Estagio", "Lat", "Long") %>%
+map_plot <- dados %>% select("Ambiente", "Especie", "Lat", "Long") %>%
     group_by_all() %>%
     summarise(N = n())
 
 map_plot <- map_plot %>% spread(Especie, N, fill = 0)
 
 #Cretae a new data frame
-dados_riq <- data.frame(lapply(map_plot[5:13], function(x) ifelse(x >= 1,1,0)))
+dados_riq <- data.frame(lapply(map_plot[5:12], function(x) ifelse(x >= 1,1,0)))
 
 dados_riq <- dados_riq %>% 
     mutate(riq = rowSums(dados_riq))
 
-dados_amb <- map_plot %>% select("Ambiente", "Lat", "Long", "Estagio")
+dados_amb <- map_plot %>% select("Ambiente", "Lat", "Long")
 dados_amb <- data.frame(dados_amb)
 
 map_plot <- cbind(dados_amb, dados_riq)
