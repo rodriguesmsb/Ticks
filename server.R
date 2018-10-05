@@ -114,13 +114,18 @@ ts_plot <- dados %>%
 #########################################################################################
 
 server <- function(input, output){
+    
+    
+    
     #Plot the map
     output$mapa <- renderLeaflet({
         leaflet(data = map_plot) %>%
             addTiles() %>%
             setView(lng = -63.87, lat = -8.75, zoom = 10) %>%
             addCircleMarkers(radius = ~riq * 2, color = ~pal(Ambiente), stroke = FALSE, fillOpacity = 0.8,
-                             label = ~paste("Number of species colected: ", riq))
+                             label = ~paste("Number of species colected: ", riq)) %>%
+            addLegend("bottomright", colors = c("#2b8cbe", "#006d2c"), 
+                      label = c("Periurbano", "Rural"), title = "Number of Species")
     })
     
     output$wihtakker <- renderPlotly({
