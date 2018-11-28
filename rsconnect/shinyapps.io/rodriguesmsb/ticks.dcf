@@ -5,6 +5,6 @@ account: rodriguesmsb
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 423646
-bundleId: 1622625
+bundleId: 1624931
 url: https://rodriguesmsb.shinyapps.io/ticks/
-when: 1538660462.28791
+when: 1538740519.5881
